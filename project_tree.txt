@@ -1,12 +1,3 @@
-# websanggarnampani
-
-Repositori ini berisi *source code* untuk proyek web Sanggar Nampani. 
-
-## Struktur Proyek (Project Structure)
-
-Berikut adalah gambaran *root directory* beserta struktur folder dari aplikasi ini saat ini untuk mempermudah. (Anda juga dapat merujuk ke file `project_tree.txt`).
-
-```text
 project_sanggar/
 ├── .gitignore
 ├── app/
@@ -40,4 +31,3 @@ project_sanggar/
 ├── storage/
 ├── project_tree.txt
 └── readme.md
-```
