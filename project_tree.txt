@@ -1,33 +1,55 @@
-project_sanggar/
-├── .gitignore
-├── app/
-│   ├── controllers/
-│   │   ├── DashboardController.php
-│   │   ├── HomestayController.php
-│   │   ├── KelasController.php
-│   │   ├── RedirectingController.php
-│   │   └── UMKMController.php
-│   ├── models/
-│   │   └── engagement.php
-│   └── views/
-├── bootstrap/
-├── config/
-│   ├── app.php
-│   └── db.php
-├── database/
-│   └── sanggar.sql
-├── public/
-│   ├── index.php
-│   └── assets/
-│       ├── css/
-│       │   └── bootstrap/
-│       │       ├── bootstrap.min.css
-│       │       └── icons/
-│       │           └── images/
-│       └── js/
-│           └── bootstrap.bundle.min.js
-├── routes/
-│   └── web.php
-├── storage/
-├── project_tree.txt
-└── readme.md
+Folder PATH listing
+Volume serial number is 00000004 5A3F:0BA7
+C:.
+|   .gitignore
+|   project_tree.txt
+|   readme.md
+|   
++---app
+|   +---controllers
+|   |       ApiController.php
+|   |       DashboardController.php
+|   |       HomestayController.php
+|   |       KelasController.php
+|   |       RedirectingController.php
+|   |       UMKMController.php
+|   |       
+|   +---models
+|   |       engagement.php
+|   |       
+|   \---views
+|       +---components
+|       +---layouts
+|       |       footer.php
+|       |       header.php
+|       |       
+|       \---pages
++---bootstrap
+|       init.php
+|       
++---config
+|       app.php
+|       db.php
+|       
++---database
+|       sanggar.sql
+|       
++---public
+|   |   index.php
+|   |   
+|   \---assets
+|       +---css
+|       |   \---bootstrap
+|       |       |   bootstrap.min.css
+|       |       |   custom.css
+|       |       |   
+|       |       \---icons
+|       |           \---images
+|       \---js
+|               app.js
+|               bootstrap.bundle.min.js
+|               
++---routes
+|       web.php
+|       
+\---storage
