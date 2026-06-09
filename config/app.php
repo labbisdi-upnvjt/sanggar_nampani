@@ -9,3 +9,4 @@ return [
     'environment' => 'local'
 
 ];
+?>

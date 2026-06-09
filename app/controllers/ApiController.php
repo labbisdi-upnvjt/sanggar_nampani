@@ -7,8 +7,6 @@ class ApiController
         array $data = []
     )
     {
-        extract($data);
-
         require BASE_PATH .
             '/app/views/layouts/header.php';
 
@@ -21,3 +19,4 @@ class ApiController
             '/app/views/layouts/footer.php';
     }
 }
+?>

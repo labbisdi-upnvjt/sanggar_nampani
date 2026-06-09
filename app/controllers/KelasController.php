@@ -10,3 +10,4 @@ class KelasController extends ApiController
         $this->view('kelas');
     }
 }
+?>

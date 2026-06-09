@@ -10,3 +10,4 @@ class HomestayController extends ApiController
         $this->view('homestay');
     }
 }
+?>
