@@ -17,14 +17,12 @@
                             DENGAN LINK EMBED GOOGLE MAPS
                         -->
 
-                        <iframe
-                            src=""
-                            style="border:0;"
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-
-                        </iframe>
+                        <img
+                            src="/project_sanggar/public/assets/images/gambar_sanggar.jpeg"
+                            alt="Gambar Sanggar"
+                            class="w-100 h-100"
+                            style="border: 4px solid #FFDD00; border-radius: 16px; object-fit: cover; object-position: center;"
+                            loading="lazy">
 
                     </div>
 
@@ -70,27 +68,12 @@
 
             <div class="col-12">
 
-                <div
-                    class="bg-white border rounded d-flex justify-content-center align-items-center"
-                    style="height:250px;">
-
-                    <div class="text-center">
-
-                        <h5>
-
-                            Upload Gambar Disini
-
-                        </h5>
-
-                        <p class="mb-0 text-muted">
-
-                            Foto akses jalan, gerbang, atau area sekitar sanggar
-
-                        </p>
-
-                    </div>
-
-                </div>
+                <img
+                    src="/project_sanggar/public/assets/images/gmaps.png"
+                    alt="Foto Akses Lokasi Sanggar"
+                    class="img-fluid w-100 shadow-sm"
+                    style="height: 250px; object-fit: cover; border: 4px solid #FFDD00; border-radius: 16px;"
+                    loading="lazy">
 
             </div>
 

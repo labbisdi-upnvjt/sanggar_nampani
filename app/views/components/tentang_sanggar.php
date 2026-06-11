@@ -21,7 +21,6 @@
             <!-- DESKRIPSI -->
 
             <div class="col-lg-6">
-
                 <h2 class="fw-bold mb-4">
 
                     Tentang Sanggar Nampani
@@ -42,7 +41,8 @@
                     <div class="col-6">
 
                         <div
-                            class="border rounded text-center p-4 h-100">
+                            class="text-center p-4 h-100"
+                            style="border: 4px solid #FFDD00; border-radius: 16px;">
 
                             <h3 class="fw-bold">
 
@@ -63,7 +63,8 @@
                     <div class="col-6">
 
                         <div
-                            class="border rounded text-center p-4 h-100">
+                            class="text-center p-4 h-100"
+                            style="border: 4px solid #FFDD00; border-radius: 16px;">
 
                             <h3 class="fw-bold">
 

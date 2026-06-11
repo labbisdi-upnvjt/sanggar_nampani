@@ -3,7 +3,8 @@
     <div class="container">
         <div
             id="heroSlider"
-            class="carousel slide"
+            class="carousel slide overflow-hidden"
+            style="border: 8px solid #FFDD00; border-radius: 16px;"
             data-bs-ride="carousel">
 
             <div class="carousel-inner">
@@ -12,7 +13,7 @@
                 <div class="carousel-item active">
 
                     <div
-                        class="rounded overflow-hidden position-relative"
+                        class="overflow-hidden position-relative"
                         style="
                             height:500px;
                             background:
@@ -41,7 +42,7 @@
                 <!-- SLIDE 2 -->
                 <div class="carousel-item">
                     <div
-                        class="rounded overflow-hidden position-relative"
+                        class="overflow-hidden position-relative"
                         style="
                             height:500px;
                             background:
@@ -70,7 +71,7 @@
                 <div class="carousel-item">
 
                     <div
-                        class="rounded overflow-hidden position-relative"
+                        class="overflow-hidden position-relative"
                         style="
                             height:500px;
                             background:

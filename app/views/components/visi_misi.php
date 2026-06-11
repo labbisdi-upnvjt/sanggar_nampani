@@ -19,7 +19,8 @@
             <div class="col-lg-6">
 
                 <div
-                    class="bg-white p-4 rounded shadow-sm h-100">
+                    class="bg-white p-4 rounded shadow-sm h-100"
+                    style="border:4px solid #FFDD00; border-radius: 16px;">
 
                     <h3 class="fw-bold mb-3">
 
@@ -45,7 +46,8 @@
             <div class="col-lg-6">
 
                 <div
-                    class="bg-white p-4 rounded shadow-sm h-100">
+                    class="bg-white p-4 rounded shadow-sm h-100"
+                    style="border:4px solid #FFDD00; border-radius: 16px;">
 
                     <h3 class="fw-bold mb-3">
 
