@@ -15,15 +15,28 @@ C:.
 |   |       UMKMController.php
 |   |       
 |   +---models
-|   |       engagement.php
-|   |       
+|   |       Engagements.php
 |   \---views
 |       +---components
+|       |       cta.php
+|       |       galeri.php
+|       |       gmaps.php
+|       |       hero.php
+|       |       navbar.php
+|       |       sejarah.php
+|       |       tentang_sanggar.php
+|       |       visi_misi.php
+|       |       
 |       +---layouts
 |       |       footer.php
 |       |       header.php
 |       |       
 |       \---pages
+|               dashboard.php
+|               homestay.php
+|               kelas.php
+|               umkm.php
+|               
 +---bootstrap
 |       init.php
 |       

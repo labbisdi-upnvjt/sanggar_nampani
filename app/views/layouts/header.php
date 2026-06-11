@@ -20,7 +20,7 @@
 
     <link
         rel="stylesheet"
-        href="/project_sanggar/public/assets/css/custom.css">
+        href="/project_sanggar/public/assets/css/bootstrap/custom.css">
 
 </head>
 

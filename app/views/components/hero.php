@@ -1,7 +1,6 @@
 <section class="py-4">
 
     <div class="container">
-
         <div
             id="heroSlider"
             class="carousel slide"
@@ -10,102 +9,93 @@
             <div class="carousel-inner">
 
                 <!-- SLIDE 1 -->
-
                 <div class="carousel-item active">
 
                     <div
                         class="rounded overflow-hidden position-relative"
                         style="
-                            height: 500px;
-                            background:#d9d9d9;
+                            height:500px;
+                            background:
+                                linear-gradient(
+                                    rgba(0,0,0,.45),
+                                    rgba(0,0,0,.45)
+                                ),
+                                url('/project_sanggar/public/assets/images/dashboard_1.png');
+                            background-size:cover;
+                            background-position:center;
                         ">
 
-                        <div
-                            class="position-absolute top-50 start-50 translate-middle text-center">
+                        <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+                            <h1 class="fw-bold display-5">
 
-                            <h2 class="fw-bold">
+                                Sanggar Tari Nampani
+                            </h1>
 
-                                BACKGROUND HERO 1
-
-                            </h2>
-
-                            <p>
-
-                                Letakkan gambar panorama sanggar di sini
-
+                            <p class="lead">
+                                Melestarikan seni dan budaya Banyuwangi melalui pendidikan, pertunjukan, dan kolaborasi komunitas.
                             </p>
-
                         </div>
-
                     </div>
-
                 </div>
 
                 <!-- SLIDE 2 -->
-
                 <div class="carousel-item">
-
                     <div
                         class="rounded overflow-hidden position-relative"
                         style="
-                            height: 500px;
-                            background:#cfcfcf;
+                            height:500px;
+                            background:
+                                linear-gradient(
+                                    rgba(0,0,0,.45),
+                                    rgba(0,0,0,.45)
+                                ),
+                                url('/project_sanggar/public/assets/images/dashboard_2.png');
+                            background-size:cover;
+                            background-position:center;
                         ">
 
-                        <div
-                            class="position-absolute top-50 start-50 translate-middle text-center">
-
+                        <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
                             <h2 class="fw-bold">
-
-                                BACKGROUND HERO 2
-
+                                Kelas Seni & Pembinaan
                             </h2>
 
                             <p>
-
-                                Placeholder slide kedua
-
+                                Ruang belajar bagi generasi muda untuk mengenal dan mengembangkan potensi seni budaya daerah.
                             </p>
-
                         </div>
-
                     </div>
-
                 </div>
 
                 <!-- SLIDE 3 -->
-
                 <div class="carousel-item">
 
                     <div
                         class="rounded overflow-hidden position-relative"
                         style="
                             height:500px;
-                            background:#bdbdbd;
+                            background:
+                                linear-gradient(
+                                    rgba(0,0,0,.45),
+                                    rgba(0,0,0,.45)
+                                ),
+                                url('/project_sanggar/public/assets/images/dashboard_3.png');
+                            background-size:cover;
+                            background-position:center;
                         ">
 
-                        <div
-                            class="position-absolute top-50 start-50 translate-middle text-center">
+                        <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
 
                             <h2 class="fw-bold">
 
-                                BACKGROUND HERO 3
-
+                                Pertunjukan & Kolaborasi
                             </h2>
 
                             <p>
-
-                                Placeholder slide ketiga
-
+                                Menjadi wadah kreativitas, pelestarian budaya, dan penguatan identitas masyarakat Banyuwangi.
                             </p>
-
                         </div>
-
                     </div>
-
                 </div>
-
-            </div>
 
             <button
                 class="carousel-control-prev"
@@ -116,7 +106,6 @@
                 <span
                     class="carousel-control-prev-icon">
                 </span>
-
             </button>
 
             <button
@@ -130,9 +119,6 @@
                 </span>
 
             </button>
-
         </div>
-
     </div>
-
 </section>

@@ -1,9 +1,24 @@
 <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
     <div class="container">
 
-        <a class="navbar-brand fw-bold" href="?page=dashboard">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="?page=dashboard">
 
-            [ LETAKKAN LOGO SANGGAR NAMPANI DISINI ]
+            <img
+                src="/project_sanggar/public/assets/images/logo_sanggar.jpeg"
+                alt="Logo Sanggar Nampani"
+                width="50"
+                height="50"
+                class="rounded-circle">
+
+            <div>
+                <div class="fw-bold">
+                    Sanggar Tari Nampani
+                </div>
+
+                <small class="text-muted">
+                    Kampunganyar, Banyuwangi
+                </small>
+            </div>
 
         </a>
 
@@ -51,7 +66,7 @@
 
                     <a
                         href="?page=redirect"
-                        class="btn btn-dark">
+                        class="btn btn-warning fw-semibold text-black">
 
                         Hubungi Kami
 

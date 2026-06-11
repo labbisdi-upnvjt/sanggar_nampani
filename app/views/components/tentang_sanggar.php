@@ -8,26 +8,12 @@
 
             <div class="col-lg-6">
 
-                <div
-                    class="bg-light rounded shadow-sm d-flex justify-content-center align-items-center"
-                    style="height:400px;">
-
-                    <div class="text-center">
-
-                        <h5>
-
-                            FOTO SANGGAR NAMPANI
-
-                        </h5>
-
-                        <p class="mb-0">
-
-                            Letakkan foto utama di sini
-
-                        </p>
-
-                    </div>
-
+                <div class="overflow-hidden shadow-sm" style="border: 4px solid #FFDD00; border-radius: 16px; height: 400px;">
+                    <img
+                        src="/project_sanggar/public/assets/images/dashboard-sejarah.jpg"
+                        alt="Foto Sanggar Nampani"
+                        class="w-100 h-100"
+                        style="object-fit: cover; opacity: 0.4;">
                 </div>
 
             </div>
