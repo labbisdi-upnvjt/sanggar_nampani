@@ -1,0 +1,52 @@
+/*hero untuk kelas seni*/
+
+.kelas-hero {
+
+    height: 420px;
+
+    background-image:
+        url('../images/bg_hero_kelas.png');
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+}
+
+.kelas-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.kelas-title {
+
+    color: #ffffff;
+
+    text-shadow:
+        3px 3px 0 #8B0000,
+        0 0 10px rgba(0, 0, 0, .5);
+}
+
+.kelas-subtitle {
+
+    display: inline-block;
+
+    padding: 6px 14px;
+
+    background: rgba(0, 70, 80, .9);
+
+    border-radius: 8px;
+
+    margin-bottom: 8px;
+
+    font-weight: 500;
+}
+
+.kelas-hero .btn {
+
+    background: #fff;
+}

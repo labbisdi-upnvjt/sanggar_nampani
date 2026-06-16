@@ -10,10 +10,10 @@
 
                 <div class="overflow-hidden shadow-sm" style="border: 4px solid #FFDD00; border-radius: 16px; height: 400px;">
                     <img
-                        src="/project_sanggar/public/assets/images/dashboard-sejarah.jpg"
+                        src="/project_sanggar/public/assets/images/dashboard_foto_sanggar.png"
                         alt="Foto Sanggar Nampani"
                         class="w-100 h-100"
-                        style="object-fit: cover; opacity: 0.4;">
+                        style="object-fit: cover;">
                 </div>
 
             </div>

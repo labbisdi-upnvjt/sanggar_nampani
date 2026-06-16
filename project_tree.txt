@@ -58,6 +58,16 @@ C:.
 |       |       |   
 |       |       \---icons
 |       |           \---images
+|       +---images
+|       |       dashboard-sejarah.jpg
+|       |       dashboard_1.png
+|       |       dashboard_2.png
+|       |       dashboard_3.png
+|       |       gambar_sanggar.jpeg
+|       |       dashboard_foto_sanggar.png
+|       |       gmaps.png
+|       |       logo_sanggar.jpeg
+|       |       
 |       \---js
 |               app.js
 |               bootstrap.bundle.min.js

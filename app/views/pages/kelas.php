@@ -1,10 +1,15 @@
-<div class="container mt-5">
+<?php
 
-    <h1>Kelas Page</h1>
+require BASE_PATH .
+'/app/views/components/navbar.php';
 
-    <p>
-        Halaman Kelas berhasil dimuat
-        melalui KelasController.
-    </p>
+require BASE_PATH .
+'/app/views/components/kelas/hero.php';
 
-</div>
+require BASE_PATH .
+'/app/views/components/kelas/kelas_list.php';
+
+require BASE_PATH .
+'/app/views/components/kelas/kelas_info.php';
+
+?>
