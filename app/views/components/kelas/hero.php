@@ -1,40 +1,148 @@
-<section class="kelas-hero position-relative overflow-hidden">
+<section class="py-4">
 
-    <!-- Tombol Kembali -->
-    <div class="position-absolute top-0 start-0 m-3 z-3">
-        <a href="?page=dashboard"
-            class="btn btn-light rounded-pill px-4 border border-warning border-3 fw-semibold">
+    <div class="container">
 
-            ← Kembali
+        <!-- Tombol Kembali -->
+        <div class="mb-3">
 
-        </a>
-    </div>
+            <a
+                href="?page=dashboard"
+                class="btn btn-light rounded-pill px-4 py-2 border border-warning border-3 fw-semibold shadow">
 
-    <!-- Overlay -->
-    <div class="kelas-overlay"></div>
+                ← Kembali
 
-    <!-- Konten -->
-    <div class="container h-100 d-flex align-items-center justify-content-center">
+            </a>
 
-        <div class="text-center text-white position-relative z-2">
+        </div>
 
-            <h1 class="display-4 fw-bold kelas-title">
+        <div
+            id="kelasHeroSlider"
+            class="carousel slide overflow-hidden position-relative"
+            style="
+                border: 8px solid #FFDD00;
+                border-radius: 16px;
+            "
+            data-bs-ride="carousel">
 
-                Kelas Tari Nampani
+            <div class="carousel-inner">
 
-            </h1>
+                <!-- SLIDE 1 -->
+                <div class="carousel-item active">
 
-            <h3 class="kelas-subtitle">
+                    <div
+                        class="kelas-slide"
+                        style="
+                            background:
+                                linear-gradient(
+                                    rgba(0,0,0,.40),
+                                    rgba(0,0,0,.40)
+                                ),
+                                url('/project_sanggar/public/assets/images/bg_hero_kelas_1.png');
+                        ">
+                    </div>
 
-                Meregenerasi Masyarakat Melek Tradisi dan Budaya,
+                </div>
 
-            </h3>
+                <!-- SLIDE 2 -->
+                <div class="carousel-item">
 
-            <h3 class="kelas-subtitle">
+                    <div
+                        class="kelas-slide"
+                        style="
+                            background:
+                                linear-gradient(
+                                    rgba(0,0,0,.40),
+                                    rgba(0,0,0,.40)
+                                ),
+                                url('/project_sanggar/public/assets/images/bg_hero_kelas_2.png');
+                        ">
+                    </div>
 
-                Melahirkan ratusan insan tari nampani
+                </div>
 
-            </h3>
+                <!-- SLIDE 3 -->
+                <div class="carousel-item">
+
+                    <div
+                        class="kelas-slide"
+                        style="
+                            background:
+                                linear-gradient(
+                                    rgba(0,0,0,.40),
+                                    rgba(0,0,0,.40)
+                                ),
+                                url('/project_sanggar/public/assets/images/bg_hero_kelas_3.png');
+                        ">
+                    </div>
+
+                </div>
+
+                <!-- SLIDE 4 -->
+                <div class="carousel-item">
+
+                    <div
+                        class="kelas-slide"
+                        style="
+                            background:
+                                linear-gradient(
+                                    rgba(0,0,0,.40),
+                                    rgba(0,0,0,.40)
+                                ),
+                                url('/project_sanggar/public/assets/images/bg_hero_kelas_4.png');
+                        ">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Overlay Text -->
+            <div class="kelas-caption">
+
+                <h1 class="kelas-title">
+
+                    Kelas Tari Nampani
+
+                </h1>
+
+                <div class="kelas-tagline">
+
+                    <h3>
+
+                        Meregenerasi Masyarakat Melek Tradisi dan Budaya,
+
+                    </h3>
+
+                    <h3>
+
+                        Melahirkan ratusan insan tari nampani
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+            <!-- Navigation -->
+            <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#kelasHeroSlider"
+                data-bs-slide="prev">
+
+                <span class="carousel-control-prev-icon"></span>
+
+            </button>
+
+            <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#kelasHeroSlider"
+                data-bs-slide="next">
+
+                <span class="carousel-control-next-icon"></span>
+
+            </button>
 
         </div>
 
