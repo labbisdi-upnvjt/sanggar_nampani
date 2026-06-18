@@ -10,3 +10,4 @@ class UMKMController extends ApiController
         $this->view('umkm');
     }
 }
+?>

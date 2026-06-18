@@ -2,7 +2,7 @@
 
     <div class="container">
 
-        <div class="text-center mb-4">
+        <div class="text-center mb-2">
 
             <h2 class="section-title">
 

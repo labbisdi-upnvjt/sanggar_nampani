@@ -7,7 +7,7 @@
         border: 2px solid #FFDD00;
         border-radius: 8px;
         padding: 6px 14px !important;
-        background-color: rgba(255, 221, 0, 0.08);
+        background-color: rgba(255, 221, 0, 0.23);
         transition: all 0.3s ease;
     }
 
@@ -16,6 +16,8 @@
         border: 2px solid transparent;
         border-radius: 8px;
         padding: 6px 14px !important;
+        font-weight: 600;
+        color: #000;
     }
 
     .navbar .nav-link:hover:not(.nav-active) {

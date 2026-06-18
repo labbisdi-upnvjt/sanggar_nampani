@@ -38,6 +38,9 @@
                                 rgba(0,0,0,.30)
                             ),
                             url('/project_sanggar/public/assets/images/homestay_background_1.png');
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
                         ">
                     </div>
 
@@ -55,6 +58,9 @@
                                 rgba(0,0,0,.30)
                             ),
                             url('/project_sanggar/public/assets/images/homestay_background_2.png');
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
                         ">
                     </div>
 
@@ -72,6 +78,9 @@
                                 rgba(0,0,0,.30)
                             ),
                             url('/project_sanggar/public/assets/images/homestay_background_3.png');
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
                         ">
                     </div>
 

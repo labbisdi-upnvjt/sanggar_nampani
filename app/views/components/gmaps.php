@@ -12,11 +12,6 @@
 
                     <div class="ratio ratio-16x9">
 
-                        <!--
-                            GANTI src DI BAWAH
-                            DENGAN LINK EMBED GOOGLE MAPS
-                        -->
-
                         <img
                             src="/project_sanggar/public/assets/images/gambar_sanggar.jpeg"
                             alt="Gambar Sanggar"
@@ -63,7 +58,7 @@
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23436.944264899994!2d114.25978810784076!3d-8.184383983891387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd14f18a8ec20c1%3A0x784a84a73c816c77!2sSanggar%20Nampani!5e0!3m2!1sen!2sid!4v1781676287413!5m2!1sen!2sid"
                     class="w-100 shadow-sm"
-                    style="height: 250px; border: 4px solid #FFDD00; border-radius: 16px;"
+                    style="height: 350px; border: 4px solid #FFDD00; border-radius: 16px;"
                     allowfullscreen=""
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">

@@ -1,5 +1,5 @@
 Folder PATH listing
-Volume serial number is 00000004 5A3F:0BA7
+Volume serial number is 00000075 5A3F:0BA7
 C:.
 |   .gitignore
 |   project_tree.txt
@@ -16,17 +16,32 @@ C:.
 |   |       
 |   +---models
 |   |       Engagements.php
+|   |       
 |   \---views
 |       +---components
-|       |       cta.php
-|       |       galeri.php
-|       |       gmaps.php
-|       |       hero.php
-|       |       navbar.php
-|       |       sejarah.php
-|       |       tentang_sanggar.php
-|       |       visi_misi.php
-|       |       
+|       |   |   cta.php
+|       |   |   galeri.php
+|       |   |   gmaps.php
+|       |   |   hero.php
+|       |   |   navbar.php
+|       |   |   sejarah.php
+|       |   |   tentang_sanggar.php
+|       |   |   visi_misi.php
+|       |   |   
+|       |   +---homestay
+|       |   |       hero.php
+|       |   |   homestay_list.php
+|       |   |   restoran.php
+|       |   |   
+|       |   +---kelas
+|       |   |       hero.php
+|       |   |   kelas_info.php
+|       |   |   kelas_list.php
+|       |   |   
+|       \---umkm
+|           catalog.php
+|           hero.php
+|           
 |       +---layouts
 |       |       footer.php
 |       |       header.php
@@ -40,6 +55,28 @@ C:.
 +---bootstrap
 |       init.php
 |       
++---cms
+|   |   dashboard.php
+|   |   index.php
+|   |   login.php
+|   |   logout.php
+|   |   readme.md
+|   |   
+|   +---assets
+|   +---includes
+|   |       footer.php
+|   |       header.php
+|   |       sidebar.php
+|   |       
+|   \---pages
+|           galeri.php
+|           homestay.php
+|           kelas.php
+|           kontak.php
+|           pengaturan.php
+|           profil.php
+|           umkm.php
+|           
 +---config
 |       app.php
 |       db.php
@@ -59,14 +96,36 @@ C:.
 |       |       \---icons
 |       |           \---images
 |       +---images
+|       |       bg_hero_kelas_1.png
+|       |       bg_hero_kelas_2.png
+|       |       bg_hero_kelas_3.png
+|       |       bg_hero_kelas_4.png
 |       |       dashboard-sejarah.jpg
 |       |       dashboard_1.png
 |       |       dashboard_2.png
 |       |       dashboard_3.png
-|       |       gambar_sanggar.jpeg
 |       |       dashboard_foto_sanggar.png
-|       |       gmaps.png
+|       |       gambar_sanggar.jpeg
+|       |       homestay_background_1.png
+|       |       homestay_background_2.png
+|       |       homestay_background_3.png
+|       |       item_homestay_1.png
+|       |       item_homestay_2.png
+|       |       kelas_anak.png
+|       |       kelas_dewasa.png
+|       |       kelas_remaja.png
 |       |       logo_sanggar.jpeg
+|       |       prestasi_penghargaan.png
+|       |       restoran_1.png
+|       |       restoran_2.png
+|       |       umkm_1.png
+|       |       umkm_2.png
+|       |       umkm_3.png
+|       |       Vector.png
+|       |       wisata_1a.png
+|       |       wisata_1b.png
+|       |       wisata_2a.png
+|       |       wisata_2b.png
 |       |       
 |       \---js
 |               app.js
@@ -75,4 +134,4 @@ C:.
 +---routes
 |       web.php
 |       
-\---storage
+\---storage

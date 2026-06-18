@@ -5,8 +5,7 @@ class ApiController
     protected function view(
         string $page,
         array $data = []
-    )
-    {
+    ) {
         require BASE_PATH .
             '/app/views/layouts/header.php';
 
