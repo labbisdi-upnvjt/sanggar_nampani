@@ -1,3 +1,29 @@
+<?php
+    $currentPage = $_GET['page'] ?? 'dashboard';
+?>
+
+<style>
+    .nav-active {
+        border: 2px solid #FFDD00;
+        border-radius: 8px;
+        padding: 6px 14px !important;
+        background-color: rgba(255, 221, 0, 0.08);
+        transition: all 0.3s ease;
+    }
+
+    .navbar .nav-link {
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        padding: 6px 14px !important;
+    }
+
+    .navbar .nav-link:hover:not(.nav-active) {
+        border-color: rgba(255, 221, 0, 0.4);
+        background-color: rgba(255, 221, 0, 0.05);
+    }
+</style>
+
 <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
     <div class="container">
 
@@ -39,25 +65,25 @@
             <ul class="navbar-nav ms-auto align-items-lg-center">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="?page=dashboard">
+                    <a class="nav-link <?= $currentPage === 'dashboard' ? 'nav-active' : '' ?>" href="?page=dashboard">
                         Beranda
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="?page=kelas">
+                    <a class="nav-link <?= $currentPage === 'kelas' ? 'nav-active' : '' ?>" href="?page=kelas">
                         Kelas Seni
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="?page=umkm">
+                    <a class="nav-link <?= $currentPage === 'umkm' ? 'nav-active' : '' ?>" href="?page=umkm">
                         UMKM
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="?page=homestay">
+                    <a class="nav-link <?= $currentPage === 'homestay' ? 'nav-active' : '' ?>" href="?page=homestay">
                         Homestay & Resto
                     </a>
                 </li>

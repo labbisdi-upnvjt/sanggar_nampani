@@ -1,10 +1,12 @@
-<div class="container mt-5">
+<?php
 
-    <h1>UMKM Page</h1>
+require BASE_PATH .
+'/app/views/components/navbar.php';
 
-    <p>
-        Halaman UMKM berhasil dimuat
-        melalui UMKMController.
-    </p>
+require BASE_PATH .
+'/app/views/components/umkm/hero.php';
 
-</div>
+require BASE_PATH .
+'/app/views/components/umkm/catalog.php';
+
+?>

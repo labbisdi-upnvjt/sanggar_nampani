@@ -84,9 +84,7 @@
     }
 }
 
-/* =========================================
-   KELAS LIST
-========================================= */
+/*KELAS LIST*/
 
 .kelas-card {
 
@@ -231,9 +229,7 @@
     }
 }
 
-/* =========================================
-   INFO KELAS
-========================================= */
+/*INFO KELAS*/
 
 .info-card {
 
@@ -346,5 +342,362 @@
 
         width: 90px;
         height: 90px;
+    }
+}
+
+/* =====================================
+   HOMESTAY HERO
+===================================== */
+
+.homestay-slide {
+
+    height: 260px;
+
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.homestay-caption {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+
+    color: white;
+}
+
+.homestay-title {
+
+    font-size: 3rem;
+
+    font-weight: 700;
+
+    color: #FFF7C8;
+
+    text-shadow:
+        3px 3px 0 #003E46;
+}
+
+.homestay-subtitle {
+
+    font-size: 1.3rem;
+
+    margin: 0;
+}
+
+/* =====================================
+   HOMESTAY
+===================================== */
+
+.section-title {
+
+    color: #8B0000;
+
+    font-size: 3rem;
+
+    font-weight: 700;
+
+    text-shadow:
+        2px 2px 5px rgba(0, 0, 0, .15);
+}
+
+.section-description {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    font-size: 1.2rem;
+}
+
+.homestay-card {
+
+    background: #ECECEC;
+
+    border: 4px solid #F1D400;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+}
+
+.homestay-image {
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 220px;
+
+    object-fit: cover;
+}
+
+.harga-homestay {
+
+    font-weight: 700;
+}
+
+.btn-booking {
+
+    text-decoration: none;
+
+    color: #333;
+
+    border: 3px solid #F1D400;
+
+    border-radius: 999px;
+
+    padding: 10px 22px;
+
+    background: white;
+
+    transition: .3s;
+}
+
+.btn-booking:hover {
+
+    background: #F8F8F8;
+}
+
+/* =====================================
+   RESTORAN
+===================================== */
+
+.restoran-image {
+
+    width: 100%;
+
+    height: 280px;
+
+    object-fit: cover;
+
+    border: 4px solid #FFDD00;
+
+    border-radius: 20px;
+}
+
+.restoran-price-box {
+
+    display: inline-block;
+
+    padding: 20px 50px;
+
+    border: 4px solid #FFDD00;
+
+    border-radius: 24px;
+
+    background: white;
+}
+
+.restoran-price-box h1 {
+
+    color: #7A0000;
+
+    font-size: 3rem;
+
+    font-weight: 700;
+}
+
+/* =====================================
+   UMKM HERO
+===================================== */
+
+.umkm-title {
+
+    font-size: 4rem;
+
+    font-weight: 700;
+
+    color: #003E46;
+
+    text-shadow:
+        4px 4px 0 #E9C5A5,
+        0 0 10px rgba(0, 0, 0, .15);
+}
+
+.umkm-description {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    font-size: 1.8rem;
+
+    line-height: 1.4;
+}
+
+/* =====================================
+   UMKM PANEL
+===================================== */
+
+.umkm-panel {
+
+    background: #ECECEC;
+
+    border: 4px solid #F1D400;
+
+    border-radius: 28px;
+
+    padding: 24px;
+
+    height: 100%;
+}
+
+.umkm-panel-title {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+    font-size: 3rem;
+
+    font-weight: 700;
+
+    color: #003E46;
+
+    text-shadow:
+        4px 4px 0 #E9C5A5;
+}
+
+/* =====================================
+   UMKM ITEM
+===================================== */
+
+.umkm-item {
+
+    display: flex;
+
+    gap: 16px;
+
+    margin-bottom: 24px;
+
+    align-items: center;
+}
+
+.umkm-image {
+
+    width: 58%;
+
+    height: 140px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    border: 3px solid #F1D400;
+
+    flex-shrink: 0;
+}
+
+.umkm-content h3 {
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+.umkm-content p {
+
+    font-size: .95rem;
+
+    margin-bottom: 10px;
+
+    line-height: 1.3;
+}
+
+.umkm-content h4 {
+
+    font-size: 2rem;
+
+    font-weight: 700;
+}
+
+/* =====================================
+   WISATA
+===================================== */
+
+.wisata-item {
+
+    margin-bottom: 40px;
+}
+
+.wisata-image {
+
+    width: 100%;
+
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    border: 3px solid #F1D400;
+}
+
+.wisata-title {
+
+    text-align: center;
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    margin-top: 16px;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 992px) {
+
+    .umkm-title {
+
+        font-size: 2.8rem;
+    }
+
+    .umkm-description {
+
+        font-size: 1.2rem;
+    }
+
+    .umkm-panel-title {
+
+        font-size: 2.2rem;
+    }
+
+    .umkm-content h3 {
+
+        font-size: 1.5rem;
+    }
+
+    .umkm-content h4 {
+
+        font-size: 1.4rem;
+    }
+
+    .wisata-title {
+
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .umkm-item {
+
+        flex-direction: column;
+    }
+
+    .umkm-image {
+
+        width: 100%;
     }
 }

@@ -1,10 +1,15 @@
-<div class="container mt-5">
+// pages/homestay.php
 
-    <h1>Homestay Page</h1>
+<?php
 
-    <p>
-        Halaman Homestay berhasil dimuat
-        melalui HomestayController.
-    </p>
+require BASE_PATH .
+'/app/views/components/navbar.php';
 
-</div>
+require BASE_PATH .
+'/app/views/components/homestay/hero.php';
+
+require BASE_PATH .
+'/app/views/components/homestay/homestay_list.php';
+
+require BASE_PATH .
+'/app/views/components/homestay/restoran.php';
