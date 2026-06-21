@@ -1,9 +1,9 @@
 <?php
 
 require_once BASE_PATH .
-'/app/controllers/ApiController.php';
+'/app/controllers/BaseController.php';
 
-class HomestayController extends ApiController
+class HomestayController extends BaseController
 {
     public function index()
     {

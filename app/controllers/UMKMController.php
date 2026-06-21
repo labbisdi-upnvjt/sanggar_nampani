@@ -1,9 +1,9 @@
 <?php
 
 require_once BASE_PATH .
-'/app/controllers/ApiController.php';
+'/app/controllers/BaseController.php';
 
-class UMKMController extends ApiController
+class UMKMController extends BaseController
 {
     public function index()
     {

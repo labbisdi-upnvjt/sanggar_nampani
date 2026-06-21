@@ -4,83 +4,63 @@
 
         <div class="row align-items-center g-5">
 
-            <!-- FOTO -->
-
             <div class="col-lg-6">
 
-                <div class="overflow-hidden shadow-sm" style="border: 4px solid #FFDD00; border-radius: 16px; height: 400px;">
+                <div
+                    class="overflow-hidden shadow-sm"
+                    style="border:4px solid #FFDD00;border-radius:16px;height:400px;">
+
                     <img
-                        src="/project_sanggar/public/assets/images/dashboard_foto_sanggar.png"
-                        alt="Foto Sanggar Nampani"
+                        src="<?= htmlspecialchars($about['image']); ?>"
+                        alt="<?= htmlspecialchars($about['title']); ?>"
                         class="w-100 h-100"
-                        style="object-fit: cover;">
+                        style="object-fit:cover;">
+
                 </div>
 
             </div>
 
-            <!-- DESKRIPSI -->
-
             <div class="col-lg-6">
+
                 <h2 class="fw-bold mb-4">
 
-                    Tentang Sanggar Nampani
+                    <?= htmlspecialchars($about['title']); ?>
 
                 </h2>
 
                 <p>
 
-                    Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit.
-                    Sed euismod, urna eu tincidunt
-                    consectetur, nisi nisl aliquet.
+                    <?= htmlspecialchars($about['description']); ?>
 
                 </p>
 
                 <div class="row mt-4">
 
-                    <div class="col-6">
+                    <?php foreach ($about['statistics'] as $item): ?>
 
-                        <div
-                            class="text-center p-4 h-100"
-                            style="border: 4px solid #FFDD00; border-radius: 16px;">
+                        <div class="col-6">
 
-                            <h3 class="fw-bold">
+                            <div
+                                class="text-center p-4 h-100"
+                                style="border:4px solid #FFDD00;border-radius:16px;">
 
-                                25
+                                <h3 class="fw-bold">
 
-                            </h3>
+                                    <?= htmlspecialchars($item['number']); ?>
 
-                            <p class="mb-0">
+                                </h3>
 
-                                Penghargaan Nasional
+                                <p class="mb-0">
 
-                            </p>
+                                    <?= htmlspecialchars($item['label']); ?>
 
-                        </div>
+                                </p>
 
-                    </div>
-
-                    <div class="col-6">
-
-                        <div
-                            class="text-center p-4 h-100"
-                            style="border: 4px solid #FFDD00; border-radius: 16px;">
-
-                            <h3 class="fw-bold">
-
-                                100
-
-                            </h3>
-
-                            <p class="mb-0">
-
-                                Anggota & Pengurus
-
-                            </p>
+                            </div>
 
                         </div>
 
-                    </div>
+                    <?php endforeach; ?>
 
                 </div>
 

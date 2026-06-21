@@ -6,7 +6,7 @@
 
             <h2 class="fw-bold">
 
-                Visi & Misi
+                <?= htmlspecialchars($visionMission['title']); ?>
 
             </h2>
 
@@ -14,26 +14,21 @@
 
         <div class="row g-4">
 
-            <!-- VISI -->
-
             <div class="col-lg-6">
 
                 <div
                     class="bg-white p-4 rounded shadow-sm h-100"
-                    style="border:4px solid #FFDD00; border-radius: 16px;">
+                    style="border:4px solid #FFDD00;border-radius:16px;">
 
                     <h3 class="fw-bold mb-3">
 
-                        Visi
+                        <?= htmlspecialchars($visionMission['vision']['title']); ?>
 
                     </h3>
 
                     <p>
 
-                        Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit.
-                        Sed euismod, urna eu tincidunt
-                        consectetur, nisi nisl aliquet.
+                        <?= htmlspecialchars($visionMission['vision']['description']); ?>
 
                     </p>
 
@@ -41,26 +36,21 @@
 
             </div>
 
-            <!-- MISI -->
-
             <div class="col-lg-6">
 
                 <div
                     class="bg-white p-4 rounded shadow-sm h-100"
-                    style="border:4px solid #FFDD00; border-radius: 16px;">
+                    style="border:4px solid #FFDD00;border-radius:16px;">
 
                     <h3 class="fw-bold mb-3">
 
-                        Misi
+                        <?= htmlspecialchars($visionMission['mission']['title']); ?>
 
                     </h3>
 
                     <p>
 
-                        Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit.
-                        Sed euismod, urna eu tincidunt
-                        consectetur, nisi nisl aliquet.
+                        <?= htmlspecialchars($visionMission['mission']['description']); ?>
 
                     </p>
 
