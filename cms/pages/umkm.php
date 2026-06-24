@@ -1,150 +1,11 @@
 <?php
-// ============================================================
-// Handle CRUD actions (POST)
-// ============================================================
+// Ambil data untuk ditampilkan
 require_once BASE_PATH . '/app/models/UMKM.php';
 require_once BASE_PATH . '/app/models/PaketWisata.php';
 
-$message = '';
-$messageType = '';
-
-// --- Helper upload gambar ---
-function uploadGambar($file, $existing = null) {
-    if ($file['error'] === UPLOAD_ERR_OK) {
-        $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
-        $namaBaru = time() . '_' . uniqid() . '.' . $ext;
-        $target = BASE_PATH . '/public/assets/images/' . $namaBaru;
-        if (move_uploaded_file($file['tmp_name'], $target)) {
-            // hapus gambar lama jika ada
-            if ($existing && file_exists(BASE_PATH . '/public/assets/images/' . $existing)) {
-                unlink(BASE_PATH . '/public/assets/images/' . $existing);
-            }
-            return $namaBaru;
-        }
-    }
-    return $existing; // jika gagal upload, tetap pakai gambar lama
-}
-
-// --- Handle POST actions ---
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // --- TAMBAH UMKM ---
-    if (isset($_POST['action']) && $_POST['action'] === 'tambah_umkm') {
-        $gambar = uploadGambar($_FILES['gambar_umkm']);
-        $data = [
-            'nama'      => $_POST['nama_umkm'],
-            'deskripsi' => $_POST['deskripsi_umkm'],
-            'harga'     => $_POST['harga_umkm'],
-            'kategori'  => $_POST['kategori_umkm'],
-            'gambar'    => $gambar
-        ];
-        if (UMKM::insert($data)) {
-            $message = 'UMKM berhasil ditambahkan.';
-            $messageType = 'success';
-        } else {
-            $message = 'Gagal menambahkan UMKM.';
-            $messageType = 'danger';
-        }
-    }
-
-    // --- EDIT UMKM ---
-    if (isset($_POST['action']) && $_POST['action'] === 'edit_umkm') {
-        $id = $_POST['id_umkm'];
-        $existing = UMKM::getById($id);
-        $gambar = uploadGambar($_FILES['gambar_umkm'], $existing['gambar']);
-        $data = [
-            'nama'      => $_POST['nama_umkm'],
-            'deskripsi' => $_POST['deskripsi_umkm'],
-            'harga'     => $_POST['harga_umkm'],
-            'kategori'  => $_POST['kategori_umkm'],
-            'gambar'    => $gambar
-        ];
-        if (UMKM::update($id, $data)) {
-            $message = 'UMKM berhasil diperbarui.';
-            $messageType = 'success';
-        } else {
-            $message = 'Gagal memperbarui UMKM.';
-            $messageType = 'danger';
-        }
-    }
-
-    // --- HAPUS UMKM ---
-    if (isset($_POST['action']) && $_POST['action'] === 'hapus_umkm') {
-        $id = $_POST['id_umkm'];
-        $existing = UMKM::getById($id);
-        if (UMKM::delete($id)) {
-            if ($existing['gambar'] && file_exists(BASE_PATH . '/public/assets/images/' . $existing['gambar'])) {
-                unlink(BASE_PATH . '/public/assets/images/' . $existing['gambar']);
-            }
-            $message = 'UMKM berhasil dihapus.';
-            $messageType = 'success';
-        } else {
-            $message = 'Gagal menghapus UMKM.';
-            $messageType = 'danger';
-        }
-    }
-
-    // --- TAMBAH PAKET WISATA ---
-    if (isset($_POST['action']) && $_POST['action'] === 'tambah_wisata') {
-        $gambar = uploadGambar($_FILES['gambar_wisata']);
-        $data = [
-            'nama'      => $_POST['nama_wisata'],
-            'deskripsi' => $_POST['deskripsi_wisata'],
-            'harga'     => $_POST['harga_wisata'],
-            'lokasi'    => $_POST['lokasi_wisata'],
-            'gambar'    => $gambar
-        ];
-        if (PaketWisata::insert($data)) {
-            $message = 'Paket Wisata berhasil ditambahkan.';
-            $messageType = 'success';
-        } else {
-            $message = 'Gagal menambahkan Paket Wisata.';
-            $messageType = 'danger';
-        }
-    }
-
-    // --- EDIT PAKET WISATA ---
-    if (isset($_POST['action']) && $_POST['action'] === 'edit_wisata') {
-        $id = $_POST['id_wisata'];
-        $existing = PaketWisata::getById($id);
-        $gambar = uploadGambar($_FILES['gambar_wisata'], $existing['gambar']);
-        $data = [
-            'nama'      => $_POST['nama_wisata'],
-            'deskripsi' => $_POST['deskripsi_wisata'],
-            'harga'     => $_POST['harga_wisata'],
-            'lokasi'    => $_POST['lokasi_wisata'],
-            'gambar'    => $gambar
-        ];
-        if (PaketWisata::update($id, $data)) {
-            $message = 'Paket Wisata berhasil diperbarui.';
-            $messageType = 'success';
-        } else {
-            $message = 'Gagal memperbarui Paket Wisata.';
-            $messageType = 'danger';
-        }
-    }
-
-    // --- HAPUS PAKET WISATA ---
-    if (isset($_POST['action']) && $_POST['action'] === 'hapus_wisata') {
-        $id = $_POST['id_wisata'];
-        $existing = PaketWisata::getById($id);
-        if (PaketWisata::delete($id)) {
-            if ($existing['gambar'] && file_exists(BASE_PATH . '/public/assets/images/' . $existing['gambar'])) {
-                unlink(BASE_PATH . '/public/assets/images/' . $existing['gambar']);
-            }
-            $message = 'Paket Wisata berhasil dihapus.';
-            $messageType = 'success';
-        } else {
-            $message = 'Gagal menghapus Paket Wisata.';
-            $messageType = 'danger';
-        }
-    }
-}
-
-// --- Ambil data untuk ditampilkan ---
 $umkmList = UMKM::getAll();
 $wisataList = PaketWisata::getAll();
 
-// --- Untuk edit, kita cek parameter GET ---
 $editUmkm = null;
 if (isset($_GET['edit_umkm'])) {
     $editUmkm = UMKM::getById($_GET['edit_umkm']);
@@ -157,9 +18,15 @@ if (isset($_GET['edit_wisata'])) {
 <div class="container-fluid mt-4">
     <h2 class="mb-4">🏪 Kelola UMKM & Paket Wisata</h2>
 
-    <?php if ($message): ?>
-        <div class="alert alert-<?= $messageType ?> alert-dismissible fade show" role="alert">
-            <?= $message ?>
+    <?php if ($flash = flash('success')): ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <?= $flash ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    <?php endif; ?>
+    <?php if ($flash = flash('error')): ?>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <?= $flash ?>
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
     <?php endif; ?>

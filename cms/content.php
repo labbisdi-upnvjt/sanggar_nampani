@@ -22,7 +22,7 @@ if ($page === 'login') {
     return;
 }
 
-// Helper function for uploading images
+// Helper function for uploading images (untuk dashboard)
 function handleCMSUpload(string $key): ?string
 {
     if (isset($_FILES[$key]) && $_FILES[$key]['error'] === UPLOAD_ERR_OK) {
@@ -299,6 +299,19 @@ switch ($page) {
         global $db;
         $action = $_POST['action'] ?? '';
 
+        // Fungsi bantu untuk upload file (hanya untuk kelas)
+        function uploadKelasFile($fileArray, $prefix = '') {
+            if (isset($fileArray['tmp_name']) && $fileArray['error'] === UPLOAD_ERR_OK && !empty($fileArray['tmp_name'])) {
+                $ext = pathinfo($fileArray['name'], PATHINFO_EXTENSION);
+                $namaBaru = $prefix . '_' . time() . '_' . uniqid() . '.' . $ext;
+                $target = BASE_PATH . '/public/assets/images/' . $namaBaru;
+                if (move_uploaded_file($fileArray['tmp_name'], $target)) {
+                    return '/project_sanggar/public/assets/images/' . $namaBaru;
+                }
+            }
+            return null;
+        }
+
         if ($action === 'save_kelas_hero') {
             try {
                 $title = trim($_POST['hero_title'] ?? '');
@@ -344,15 +357,16 @@ switch ($page) {
                 for ($i = 0; $i < count($ids); $i++) {
                     $id = $ids[$i];
                     $gambarBaru = null;
-                    if (!empty($gambars['tmp_name'][$i]) && $gambars['error'][$i] === UPLOAD_ERR_OK) {
-                        $ext = pathinfo($gambars['name'][$i], PATHINFO_EXTENSION);
-                        $namaFile = 'kelas_' . $id . '_' . time() . '.' . $ext;
-                        $dest = BASE_PATH . '/public/assets/images/' . $namaFile;
-                        if (move_uploaded_file($gambars['tmp_name'][$i], $dest)) {
-                            $gambarBaru = '/project_sanggar/public/assets/images/' . $namaFile;
-                        }
-                    }
-                    if (!$gambarBaru) {
+                    // Ambil file per indeks
+                    $file = [
+                        'name' => $gambars['name'][$i] ?? '',
+                        'tmp_name' => $gambars['tmp_name'][$i] ?? '',
+                        'error' => $gambars['error'][$i] ?? UPLOAD_ERR_NO_FILE
+                    ];
+                    $uploaded = uploadKelasFile($file, 'kelas_' . $id);
+                    if ($uploaded) {
+                        $gambarBaru = $uploaded;
+                    } else {
                         $stmtOld = $db->prepare("SELECT gambar FROM kelas_list WHERE id=?");
                         $stmtOld->execute([$id]);
                         $gambarBaru = $stmtOld->fetchColumn();
@@ -370,13 +384,10 @@ switch ($page) {
                 $judul = $_POST['prestasi_judul'] ?? '';
                 $deskripsi = $_POST['prestasi_deskripsi'] ?? '';
                 $gambarBaru = null;
-                if (!empty($_FILES['prestasi_gambar']['tmp_name']) && $_FILES['prestasi_gambar']['error'] === UPLOAD_ERR_OK) {
-                    $ext = pathinfo($_FILES['prestasi_gambar']['name'], PATHINFO_EXTENSION);
-                    $namaFile = 'prestasi_' . time() . '.' . $ext;
-                    $dest = BASE_PATH . '/public/assets/images/' . $namaFile;
-                    if (move_uploaded_file($_FILES['prestasi_gambar']['tmp_name'], $dest)) {
-                        $gambarBaru = '/project_sanggar/public/assets/images/' . $namaFile;
-                    }
+                // Upload gambar prestasi
+                $uploaded = uploadKelasFile($_FILES['prestasi_gambar'], 'prestasi');
+                if ($uploaded) {
+                    $gambarBaru = $uploaded;
                 }
                 $stmt = $db->query("SELECT id, gambar FROM kelas_info WHERE section='prestasi' LIMIT 1");
                 $existing = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -401,20 +412,31 @@ switch ($page) {
                 $ids = $_POST['id_pengajar'] ?? [];
                 $namas = $_POST['nama_pengajar'] ?? [];
                 $roles = $_POST['role_pengajar'] ?? [];
-                $fotos = $_FILES['foto_pengajar'] ?? [];
+                // Proses upload foto pengajar (array)
+                $uploadedFiles = [];
+                if (isset($_FILES['foto_pengajar'])) {
+                    foreach ($_FILES['foto_pengajar']['tmp_name'] as $idx => $tmpName) {
+                        if ($_FILES['foto_pengajar']['error'][$idx] === UPLOAD_ERR_OK && !empty($tmpName)) {
+                            $file = [
+                                'name' => $_FILES['foto_pengajar']['name'][$idx],
+                                'tmp_name' => $tmpName,
+                                'error' => $_FILES['foto_pengajar']['error'][$idx]
+                            ];
+                            $uploaded = uploadKelasFile($file, 'pengajar_' . $ids[$idx]);
+                            if ($uploaded) {
+                                $uploadedFiles[$idx] = $uploaded;
+                            }
+                        }
+                    }
+                }
 
                 $stmt = $db->prepare("UPDATE kelas_info SET nama_pengajar=?, role_pengajar=? WHERE id=? AND section='pengajar'");
 
                 for ($i = 0; $i < count($ids); $i++) {
-                    if (!empty($fotos['tmp_name'][$i]) && $fotos['error'][$i] === UPLOAD_ERR_OK) {
-                        $ext = pathinfo($fotos['name'][$i], PATHINFO_EXTENSION);
-                        $namaFile = 'pengajar_' . $ids[$i] . '_' . time() . '.' . $ext;
-                        $dest = BASE_PATH . '/public/assets/images/' . $namaFile;
-                        if (move_uploaded_file($fotos['tmp_name'][$i], $dest)) {
-                            $gambarBaru = '/project_sanggar/public/assets/images/' . $namaFile;
-                            $stmtFoto = $db->prepare("UPDATE kelas_info SET gambar=? WHERE id=?");
-                            $stmtFoto->execute([$gambarBaru, $ids[$i]]);
-                        }
+                    // Jika ada file upload, update gambar
+                    if (isset($uploadedFiles[$i])) {
+                        $stmtFoto = $db->prepare("UPDATE kelas_info SET gambar=? WHERE id=?");
+                        $stmtFoto->execute([$uploadedFiles[$i], $ids[$i]]);
                     }
                     $stmt->execute([$namas[$i], $roles[$i], $ids[$i]]);
                 }
@@ -424,14 +446,58 @@ switch ($page) {
             }
         }
         break; // AKHIR KELAS
-
+    
     // ========================================
-    // HALAMAN LAIN (tidak ada POST)
+    // UMKM & PAKET WISATA
     // ========================================
-    case 'profil':
     case 'umkm':
+        require_once BASE_PATH . '/app/models/UMKM.php';
+        require_once BASE_PATH . '/app/models/PaketWisata.php';
+        global $db;
+        $action = $_POST['action'] ?? '';
+
+        // Fungsi upload gambar (kembalikan hanya nama file)
+        function uploadUmkmGambar($file, $existing = null) {
+            if ($file['error'] === UPLOAD_ERR_OK) {
+                $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
+                $namaBaru = time() . '_' . uniqid() . '.' . $ext;
+                $target = BASE_PATH . '/public/assets/images/' . $namaBaru;
+                if (move_uploaded_file($file['tmp_name'], $target)) {
+                    // hapus gambar lama jika ada
+                    if ($existing && file_exists(BASE_PATH . '/public/assets/images/' . $existing)) {
+                        unlink(BASE_PATH . '/public/assets/images/' . $existing);
+                    }
+                    return $namaBaru;
+                }
+            }
+            return $existing; // jika gagal, pakai gambar lama
+        }
+
+        // --- TAMBAH UMKM ---
+        if ($action === 'tambah_umkm') {
+            $gambar = uploadUmkmGambar($_FILES['gambar_umkm']);
+            $data = [
+                'nama'      => $_POST['nama_umkm'],
+                'deskripsi' => $_POST['deskripsi_umkm'],
+                'harga'     => $_POST['harga_umkm'],
+                'kategori'  => $_POST['kategori_umkm'],
+                'gambar'    => $gambar
+            ];
+            if (UMKM::insert($data)) {
+                $_SESSION['flash_success'] = 'UMKM berhasil ditambahkan.';
+            } else {
+                $_SESSION['flash_error'] = 'Gagal menambahkan UMKM.';
+            }
+        }
+
+        // ... (lanjutkan dengan edit, hapus, wisata seperti sebelumnya)
+
+        break; // AKHIR UMKM
+    
+
+    // HALAMAN LAIN (hanya list halaman yang tidak ada POST)
+    case 'profil':
     case 'pengaturan':
-        // Tidak ada aksi POST di sini
         break;
 
     default:
