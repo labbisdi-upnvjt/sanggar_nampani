@@ -1,5 +1,3 @@
-// pages/homestay.php
-
 <?php
 
 require BASE_PATH .

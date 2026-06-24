@@ -5,56 +5,56 @@ $routes = [
     'login' => [
 
         'view' => 'login.php',
-        'auth' => false
+        'auth' => false,
+        'name' => 'login'
 
     ],
 
     'dashboard' => [
 
-        'view' => 'dashboard.php',
-        'auth' => true
+        'view' => 'pages/dashboard.php',
+        'auth' => true,
+        'name' => 'dashboard'
 
     ],
 
     'profil' => [
 
-        'view' => 'profil.php',
-        'auth' => true
+        'view' => 'pages/profil.php',
+        'auth' => true,
+        'name' => 'profil'
 
     ],
 
     'kelas' => [
 
-        'view' => 'kelas.php',
-        'auth' => true
+        'view' => 'pages/kelas.php',
+        'auth' => true,
+        'name' => 'kelas'
 
     ],
 
     'homestay' => [
 
-        'view' => 'homestay.php',
-        'auth' => true
+        'view' => 'pages/homestay.php',
+        'auth' => true,
+        'name' => 'homestay'
 
     ],
 
     'umkm' => [
 
-        'view' => 'umkm.php',
-        'auth' => true
-
-    ],
-
-    'galeri' => [
-
-        'view' => 'galeri.php',
-        'auth' => true
+        'view' => 'pages/umkm.php',
+        'auth' => true,
+        'name' => 'umkm'
 
     ],
 
     'pengaturan' => [
 
-        'view' => 'pengaturan.php',
-        'auth' => true
+        'view' => 'pages/pengaturan.php',
+        'auth' => true,
+        'name' => 'pengaturan'
 
     ]
 

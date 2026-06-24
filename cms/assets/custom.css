@@ -1,0 +1,187 @@
+/*
+|--------------------------------------------------------------------------
+| CMS Sanggar Nampani - Custom Styles
+|--------------------------------------------------------------------------
+|
+| Palet Warna Utama (dari custom.css frontend):
+|   Kuning Aksen  : #FFDD00
+|   Hijau Tua     : #003E46
+|   Merah Tua     : #7A0000
+|   Abu Netral    : #ECECEC
+|
+*/
+
+/* LAYOUT */
+
+body {
+    font-family: system-ui, sans-serif;
+    background: #f4f4f2;
+    color: #212529;
+}
+
+/* SIDEBAR */
+
+.cms-sidebar {
+    width: 240px;
+    min-height: 100vh;
+    background: #003E46;
+    flex-shrink: 0;
+}
+
+.cms-sidebar .brand {
+    color: #FFDD00;
+    font-weight: 700;
+    font-size: 1.05rem;
+    display: block;
+    margin-bottom: 1.5rem;
+    padding-bottom: .75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+
+.cms-sidebar .nav-link {
+    color: rgba(255, 255, 255, .75);
+    border-radius: 8px;
+    margin-bottom: 4px;
+    font-size: .9rem;
+    transition: background .2s, color .2s;
+}
+
+.cms-sidebar .nav-link:hover {
+    background: rgba(255, 255, 255, .1);
+    color: #fff;
+}
+
+.cms-sidebar .nav-link.active {
+    background: #FFDD00;
+    color: #003E46;
+    font-weight: 700;
+}
+
+/* MAIN CONTENT */
+
+.cms-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* EDITOR CARDS */
+
+.editor-card {
+    border: none;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .07);
+}
+
+.editor-card .card-header {
+    background: #FFDD00;
+    color: #003E46;
+    font-weight: 700;
+    font-size: .95rem;
+    padding: .7rem 1.25rem;
+    border-bottom: none;
+}
+
+.editor-card .card-body {
+    background: #fff;
+    padding: 1.5rem;
+}
+
+/* EVENT / SLIDE PANELS */
+
+.event-panel {
+    background: #fafafa;
+    border: 1px solid #e8e8e8;
+    border-left: 4px solid #FFDD00;
+    border-radius: 10px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+/* IMAGE PREVIEWS */
+
+img.preview {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #dee2e6;
+    display: block;
+    margin-bottom: .75rem;
+}
+
+.preview-placeholder {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    border: 2px dashed #dee2e6;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #adb5bd;
+    font-size: .85rem;
+    margin-bottom: .75rem;
+}
+
+/* FORM CONTROLS */
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #FFDD00;
+    box-shadow: 0 0 0 .2rem rgba(255, 221, 0, .25);
+}
+
+.form-label {
+    font-size: .85rem;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: .3rem;
+}
+
+/* SAVE BUTTONS */
+
+.btn-save {
+    background: #FFDD00;
+    color: #003E46;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    padding: .5rem 1.5rem;
+    transition: background .2s, box-shadow .2s;
+}
+
+.btn-save:hover {
+    background: #e6c800;
+    color: #003E46;
+    box-shadow: 0 4px 10px rgba(255, 221, 0, .4);
+}
+
+/* PAGE HEADER */
+
+.page-header {
+    border-bottom: 3px solid #FFDD00;
+    padding-bottom: .5rem;
+    margin-bottom: 1.5rem;
+}
+
+.page-header h2 {
+    font-weight: 700;
+    color: #003E46;
+    margin: 0;
+}
+
+/* SECTION LABEL INSIDE EDITORS */
+
+.section-label {
+    font-size: .7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #003E46;
+    background: #FFDD00;
+    padding: 2px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: .75rem;
+}

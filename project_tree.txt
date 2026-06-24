@@ -1,5 +1,5 @@
 Folder PATH listing
-Volume serial number is 00000075 5A3F:0BA7
+Volume serial number is 0000000E 5A3F:0BA7
 C:.
 |   .gitignore
 |   project_tree.txt
@@ -7,7 +7,7 @@ C:.
 |   
 +---app
 |   +---controllers
-|   |       ApiController.php
+|   |       BaseController.php
 |   |       DashboardController.php
 |   |       HomestayController.php
 |   |       KelasController.php
@@ -19,8 +19,6 @@ C:.
 |   |       
 |   \---views
 |       +---components
-|       |   |   cta.php
-|       |   |   galeri.php
 |       |   |   gmaps.php
 |       |   |   hero.php
 |       |   |   navbar.php
@@ -38,10 +36,10 @@ C:.
 |       |   |   kelas_info.php
 |       |   |   kelas_list.php
 |       |   |   
-|       \---umkm
-|           catalog.php
-|           hero.php
-|           
+|       |   \---umkm
+|       |           catalog.php
+|       |           hero.php
+|       |           
 |       +---layouts
 |       |       footer.php
 |       |       header.php
@@ -56,19 +54,30 @@ C:.
 |       init.php
 |       
 +---cms
-|   |   dashboard.php
+|   |   bootstrap.php
+|   |   content.php
 |   |   index.php
 |   |   login.php
 |   |   logout.php
+|   |   middleware.php
 |   |   readme.md
+|   |   routes.php
 |   |   
 |   +---assets
+|   |       custom.css
+|   +---components
+|   |       hero_editor.php
+|   |       sejarah_editor.php
+|   |       tentang_editor.php
+|   |       visi_misi_editor.php
+|   |       
 |   +---includes
-|   |       footer.php
-|   |       header.php
+|   |       layout_end.php
+|   |       layout_start.php
 |   |       sidebar.php
 |   |       
 |   \---pages
+|           dashboard.php
 |           galeri.php
 |           homestay.php
 |           kelas.php
@@ -134,4 +143,4 @@ C:.
 +---routes
 |       web.php
 |       
-\---storage
+\\---storage
